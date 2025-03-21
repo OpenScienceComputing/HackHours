@@ -11,7 +11,8 @@ Because the NMFS OpenScapes hub was not set up for dask at the time I developed 
 
 To allow folks to try Coiled, but without signing up, you can use a token I created that expires in one day.
 
-Note: I created the named coiled environment by creating a [conda environment file](hackhours_coiled_env.yml) that matched the package versions in the JupyterHub default environment, as of 2025-03-21, via this command:
+### Setting up the Coiled software environment
+I created the named coiled environment by creating a [conda environment file](hackhours_coiled_env.yml) that matched the package versions in the JupyterHub default environment, as of 2025-03-21, via this command:
 
 ```
 coiled env create --name hackhours-arm --workspace esip-lab --conda hackhours_coiled_env.yml --architecture aarch64
