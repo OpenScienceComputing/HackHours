@@ -10,12 +10,17 @@ You will need to create an account at https://coiled.io to use Coiled.  After cr
 ```
 coiled env create --name hackhours-arm --workspace esip-lab --conda hackhours_coiled_env.yml --architecture aarch64
 ```
+Clone this repo by opening a terminal and typing:
+```
+git clone https://github.com/OpenScienceComputing/HackHours.git
+```
+Then run the demo notebook, making sure `cluster_type='Coiled'` is set, not `cluster_type='Gateway'`. 
 
 #### For running Dask with Dask Gateway
 Login to the [NMFS OpenSpaces 2i2c JuptyerHub](https://nmfs-openscapes.2i2c.cloud/) choosing "Other" for the environment, and enter "openscapes/python:07980b9". Choose 7.4GB RAM for the "Resource Allocation". 
 
-#### Then in your Server...
-Open a terminal and type:
+Clone this repo by opening a terminal and typing:
 ```
 git clone https://github.com/OpenScienceComputing/HackHours.git
 ```
+Then run the demo notebook, making sure `cluster_type='Gateway'` is set, not `cluster_type='Coiled'`. 
