@@ -5,11 +5,15 @@ We will use the notebook here to explore NODD data using holoviz, then create a 
 #### For running Dask with Coiled
 Login to the [NMFS OpenSpaces 2i2c JuptyerHub](https://nmfs-openscapes.2i2c.cloud/) with the default environment, but choosing 7.4GB RAM for the "Resource Allocation". 
 
-You will need to create an account at https://coiled.io to use Coiled.  After creating an account, open a terminal and type "coiled login", a one-time step that will allow you to launch Coiled from your server.  I created the named coiled environment by creating a [conda environ file](hackhours_coiled_env.yml) that matched the package versions in the JupyterHub default environment, as of 2025-03-21, via this command:
+You will need to create an account at https://coiled.io to use Coiled.  After creating an account, open a terminal and type "coiled login", a one-time step that will allow you to launch Coiled from your server. 
+
+Note that I created the named coiled environment by creating a [conda environ file](hackhours_coiled_env.yml) that matched the package versions in the JupyterHub default environment, as of 2025-03-21, via this command:
 
 ```
 coiled env create --name hackhours-arm --workspace esip-lab --conda hackhours_coiled_env.yml --architecture aarch64
 ```
+The `hackhours_coiled_env.yml` will need to be updated with versions that match the default environment when the default environment changes, and the environment updated. 
+
 Clone this repo by opening a terminal and typing:
 ```
 git clone https://github.com/OpenScienceComputing/HackHours.git
