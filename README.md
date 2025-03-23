@@ -2,17 +2,20 @@
 We will use the notebook here to explore NODD data using holoviz, then create a virtual dataset using Virtualizarr, and then run an embarrassingly parallel job (construction of references for each file) using Dask, and then also use Dask for parallel data access in Xarray.  
 
 ### Setup:
-Login to the [NMFS OpenSpaces 2i2c JuptyerHub](https://nmfs-openscapes.2i2c.cloud/) with the default environment, open a terminal and type:
-```
-git clone https://github.com/OpenScienceComputing/HackHours.git
-coiled login --token af791b1a879e4c0b99a8b7bec850e9a1-1e7144a190114be06abf273052d98640b62cb5fa
-```
-Because the NMFS OpenScapes hub was not set up for dask at the time I developed the demo, I decided to use Coiled for Dask.
+#### For running Dask with Coiled
+Login to the [NMFS OpenSpaces 2i2c JuptyerHub](https://nmfs-openscapes.2i2c.cloud/) with the default environment, but choosing 7.4GB RAM for the "Resource Allocation". 
 
-To allow folks to try Coiled, but without signing up, you can use a token I created that expires in one day.
-
-### Setting up the Coiled software environment
-I created the named coiled environment by creating a [conda environment file](hackhours_coiled_env.yml) that matched the package versions in the JupyterHub default environment, as of 2025-03-21, via this command:
+You will need to create an account at https://coiled.io to use Coiled.  After creating an account, open a terminal and type "coiled login", a one-time step that will allow you to launch Coiled from your server.  I created the named coiled environment by creating a [conda environ file](hackhours_coiled_env.yml) that matched the package versions in the JupyterHub default environment, as of 2025-03-21, via this command:
 
 ```
 coiled env create --name hackhours-arm --workspace esip-lab --conda hackhours_coiled_env.yml --architecture aarch64
+```
+
+#### For running Dask with Dask Gateway
+Login to the [NMFS OpenSpaces 2i2c JuptyerHub](https://nmfs-openscapes.2i2c.cloud/) choosing "Other" for the environment, and enter "openscapes/python:07980b9". Choose 7.4GB RAM for the "Resource Allocation". 
+
+#### Then in your Server...
+Open a terminal and type:
+```
+git clone https://github.com/OpenScienceComputing/HackHours.git
+```
